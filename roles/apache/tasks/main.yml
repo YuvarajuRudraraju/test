@@ -1,0 +1,34 @@
+---
+- name: Install apache
+  ansible.builtin.package:
+    name: httpd
+    state: present
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: index2.html
+    dest: /var/www/html/
+    owner: root
+    group: ec2-user
+    mode: '0644'
+
+- name: Copy file with owner and permissions
+  ansible.builtin.copy:
+    src: index.html
+    dest: /var/www/html/
+    owner: root
+    group: ec2-user
+    mode: '0644'
+
+- name: Stop service httpd, if started
+  ansible.builtin.service:
+    name: httpd 
+    state: stopped
+
+
+- name: Start service apache, if not started
+  ansible.builtin.service:
+    name: httpd
+    state: started
+    enabled: yes
+
