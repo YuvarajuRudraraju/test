@@ -11,8 +11,8 @@
     owner: tomcat
     group: tomcat
     mode: '0755'
-    with_fileglob:
-      - /var/jenkins_home/workspace/JavaWeb/javaweb/*.war    
+  with_fileglob:
+    - /var/jenkins_home/workspace/JavaWeb/javaweb/*.war    
     
 - name: Start service tomcat, if not started
   ansible.builtin.service:
