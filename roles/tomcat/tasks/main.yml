@@ -7,7 +7,7 @@
    
 - name: Deploy yuva war file in Tomcat
   ansible.builtin.copy:
-    src: yuva.war 
+    src: /var/jenkins_home/workspace/JavaWeb/javaweb/hello.war
     dest: /usr/share/tomcat/webapps/
     owner: tomcat
     group: tomcat
