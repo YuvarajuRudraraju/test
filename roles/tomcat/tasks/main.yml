@@ -4,14 +4,7 @@
     name: tomcat
     state: latest
 
-- name: Deploy soa war file in Tomcat
-  ansible.builtin.copy:
-    src: sao.war 
-    dest: /usr/share/tomcat/webapps/
-    owner: tomcat
-    group: tomcat
-    mode: '0755'
-    
+   
 - name: Deploy yuva war file in Tomcat
   ansible.builtin.copy:
     src: yuva.war 
